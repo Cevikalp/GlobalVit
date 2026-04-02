@@ -58,6 +58,9 @@ Following packages are required for this repo.
     - torchvision 0.25.0.dev20251222+cu128
     - transformers 5.3+  
 
-
+# 2. Training & Evaluation
+## Frontalization
+- For face frontalization, just run  **'main_ViT_Frontalization.py'**. It creates a model by starting completely from random values. The other two training codes use pre-trained encoders of transformes used for face analysis. 
+  **'main_frontalization_pretrained_encoder.py'** uses petrained [Transface](https://github.com/DanJun6737/TransFace?utm_source=chatgpt.com) encoder whereas **'main_frontalization_pretrained_encoder_v2.py'** uses FaceXFormer encoder.
 
 
