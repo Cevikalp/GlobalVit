@@ -77,6 +77,11 @@ references. The subsequent rows display the outputs produced by the evaluated me
 - If you want to test the trained models on non-aligned face images, you can run the **'align_frontalize_faces.py'** script. It first applies face alignment 
 using RetinaFace to normalize the images, and then performs frontalization on the aligned faces. We also collected a set of images from the internet and our lab environment, 
 available in the real_images directory. To frontalize these images, run the **'test-real-images.py'** script. This script allows you to choose among four different 
-face frontalization models, including variants based on a DETR-style decoder, a GIT decoder, and models that use pretrained face transformer encoders.
+face frontalization models, including variants based on a DETR-style decoder, a GIT decoder, and models that use pretrained face transformer encoders. The outputs of the tested
+methods for these images can be seen below.
 
+
+![real_tests](https://github.com/user-attachments/assets/56dd771b-a002-40b4-81b0-a6c0adf2cd23)
+
+**Fig 3.** Visualization of frontalization results for images given under real_images directory.
 
