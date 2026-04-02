@@ -90,7 +90,7 @@ methods for these images can be seen below.
 - We trained two different models on Ade20K and CityScapes datasets. Simply run, **'main_transformer_segmentation_Ade20K_Dino.py'** script to train on Ade20K dataset and run **'main_transformer_segmentation_Cityscapes_Dino.py'**
   script to train on cityScapes dataset.
 ### Results
-- To reproduce the semnatic segmentation results given in the paper, run the scripts **'evaluate_ade20k.py'** and **'evaluate_cityscapes.py.py'** given under evaluation_segmentation directory.
+- To reproduce the semantic segmentation results given in the paper, run the scripts **'evaluate_ade20k.py'** and **'evaluate_cityscapes.py.py'** given under evaluation_segmentation directory.
 
   
 ![semnatic_segmentation](https://github.com/user-attachments/assets/47ec226a-ee2f-4635-9f5e-449e48958590)
