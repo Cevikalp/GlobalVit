@@ -61,21 +61,22 @@ Following packages are required for this repo.
 # 2. Training & Evaluation
 ## Frontalization
 ### Training
-- For face frontalization, just run  **'main_ViT_Frontalization.py'**. It creates a model by starting completely from random values. The other two training codes use pre-trained encoders of transformes used for face analysis. 
-  **'main_frontalization_pretrained_encoder.py'** uses petrained [Transface](https://github.com/DanJun6737/TransFace?utm_source=chatgpt.com) encoder whereas **'main_frontalization_pretrained_encoder_v2.py'** uses
-  [FaceXFormer](https://github.com/Kartik-3004/facexformer) encoder.
+- For face frontalization, simply run  **'main_ViT_Frontalization.py'**. This script initializes and trains a model from scratch with randomly initialized weights.
+  The other two training scripts utilize pretrained transformer encoders designed for face analysis. Specifically, **'main_frontalization_pretrained_encoder.py'**  employs a pretrained
+  [Transface](https://github.com/DanJun6737/TransFace?utm_source=chatgpt.com) encoder, while *'main_frontalization_pretrained_encoder_v2.py'** uses a [FaceXFormer](https://github.com/Kartik-3004/facexformer) encoder.
 
 ### Results
-- To reproduce the Honda test results given in the paper, just run **'main_test_honda_images.py'**. It will produce MSE and SSIM scores. Once you run this script, it will produce a directory with the frontalized images. Then, run
+- To reproduce the Honda test results given in the journal version of the paper, just run **'main_test_honda_images.py'**. It will produce MSE and SSIM scores. Once you run this script, it will produce a directory with the frontalized images. Then, run
   **'compute_fid_from_frontal-images.py'** to produce FID scores. The test images are given under FaceDatasets directory.
-
 
 ![papernew](https://github.com/user-attachments/assets/0994eba8-38ef-43e6-8412-ae93831f3c43)
 
 **Fig 2.** Visualization of frontalization results for selected non-frontal face images. The first row presents the input images with pose variations, while the second row shows the corresponding ground-truth frontal
 references. The subsequent rows display the outputs produced by the evaluated methods.
 
--- If you wnat to test the trained models on non-aligned face images,  you can run **'align_frontalize_faces.py'** script. It will use RetinaFace alignment technqiue to aling images to satandard face and then run the model on the aligned face. 
-We also collected some images from the internet and our lab environment. They are given under real_images directory. To frontal,ize these images, you have to run **'test-real-images.py'** script. That scipt enables to choose among 4 face frontalization models 
-using detr type decoder, git decoder or models using pretrained face transforme encoders. 
+-- If you want to test the trained models on non-aligned face images, you can run the **'align_frontalize_faces.py'** script. It first applies face alignment 
+using RetinaFace to normalize the images, and then performs frontalization on the aligned faces. We also collected a set of images from the internet and our lab environment, 
+available in the real_images directory. To frontalize these images, run the **'test-real-images.py'** script. This script allows you to choose among four different 
+face frontalization models, including variants based on a DETR-style decoder, a GIT decoder, and models that use pretrained face transformer encoders.
+
 
