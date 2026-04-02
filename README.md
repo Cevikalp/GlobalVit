@@ -13,12 +13,12 @@ diverse image-to-image translation problems.
 translation that leverages self-attention to model long-range spatial dependencies.
 
 -- We demonstrate that the proposed architecture can effectively address
-face frontalization by reconstructing structurally consistent frontal face images.
+face frontalization by reconstructing structurally consistent frontal face images. 
 
--- We show that the same framework can be extended to semantic segmentation with minimal architectural changes, illustrating its 
-general applicability to dense vision tasks.
+-- We show that the same framework can be extended to semantic segmentation with minimal architectural changes, illustrating its 
+general applicability to dense vision tasks. 
 
--- Extensive experiments on benchmark datasets validate the effectiveness and flexibility of the proposed method.
+-- Extensive experiments on benchmark datasets validate the effectiveness and flexibility of the proposed method.
 
 <img width="1254" height="350" alt="transformer_global_vit" src="https://github.com/user-attachments/assets/8a4b0e20-a85b-46d8-9101-9e5d7f9dffdf" />
 
