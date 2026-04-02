@@ -69,7 +69,8 @@ Following packages are required for this repo.
 - To reproduce the Honda test results given in the paper, just run **'main_test_honda_images.py'**. It will produce MSE and SSIM scores. Once you run this script, it will produce a directory with the frontalized images. Then, run
   **'compute_fid_from_frontal-images.py'** to produce FID scores. The test images are given under FaceDatasets directory.
 
-![paper_fig](https://github.com/user-attachments/assets/33da9cc5-fc25-4a56-98e5-8ec1fd35310a)
+
+![papernew](https://github.com/user-attachments/assets/0994eba8-38ef-43e6-8412-ae93831f3c43)
 
 **Fig 2.** Visualization of frontalization results for selected non-frontal face images. The first row presents the input images with pose variations, while the second row shows the corresponding ground-truth frontal
 references. The subsequent rows display the outputs produced by the evaluated methods.
