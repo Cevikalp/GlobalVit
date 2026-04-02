@@ -3,19 +3,23 @@ import scipy.misc
 import numpy as np
 import torch
 #import tensorflow as tf
-
+import os
+import sys
+sys.path.append(os.path.abspath("/media/mlcv/SSD/GlobalVit"))
 import torchvision
 from skimage.metrics import structural_similarity as ssim
 from skimage.metrics import mean_squared_error
 from PIL import Image
-from vit_frontalization import ViTFrontalizationEncoderDecoderLast, Discriminator, ViTFrontalizationEncoder
+from myutils.git_models import ViTFrontalizationEncoderDecoderLast
 import torch
 from torchvision.utils import save_image
 
-dataset_path = "/media/mlcv/Data/FaceDatasets"
-test_path = "/media/mlcv/Data/FaceDatasets/honda_subsets_meta_test.npy"
+dataset_path = "FaceDatasets"
+test_path = "FaceDatasets/honda_subsets_meta_test.npy"
 save_folder_pred = "./predictions_ours"
+os.makedirs(save_folder_pred, exist_ok=True)
 save_folder_mask = "./masks"
+os.makedirs(save_folder_mask, exist_ok=True)
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -25,8 +29,6 @@ PATCH_SIZE = 8
 EMBED_DIM = 768
 DEPTH = 6
 NUM_HEADS = 8
-
-
 
 # --- Model, Loss, Optimizer ---
 model = ViTFrontalizationEncoderDecoderLast(
@@ -41,7 +43,7 @@ model = ViTFrontalizationEncoderDecoderLast(
 
 LOAD_MODEL = True
 #loading trained models
-checkpoint = torch.load("/media/mlcv/Data/TransformerFrontalization/honda_test/models/model_epoch_last.pth", map_location="cuda")
+checkpoint = torch.load("frontalization_models/model_globalvit.pth", map_location="cuda")
 #checkpoint = torch.load("/media/mlcv/Data/TransformerFrontalization/outputs8/model_epoch_48.pth", map_location="cuda:0")
 model.load_state_dict(checkpoint)
 
@@ -52,9 +54,6 @@ def main():
     # Read image
     data_test = np.load(test_path)
     data_num_each_person = 16
-
-    
-    
 
     iter_num=0
     mse_avg = 0
@@ -90,8 +89,8 @@ def main():
         for k in range(preds.shape[0]):
             img_tensor = preds[k,:,:,:]
             input_tensor = img_set[k,:,:,:]
-            save_image(img_tensor, "./prediction_ours/output_{}_{}.png".format(i+1,k))
-            save_image(input_tensor, "./predictions_input/output_{}_{}.png".format(i+1,k))
+            save_image(img_tensor, "{}/output_{}_{}.png".format(save_folder_pred, i+1, k))
+           # save_image(input_tensor, "{}/output_{}_{}.png".format(save_folder_input, i+1, k))
 
         pred_np = preds.detach().cpu().numpy().squeeze().transpose(0,2,3,1)
         mask_np = np.array(img_mask_resize)/255        
