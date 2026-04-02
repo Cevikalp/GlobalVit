@@ -60,7 +60,16 @@ Following packages are required for this repo.
 
 # 2. Training & Evaluation
 ## Frontalization
+### Training
 - For face frontalization, just run  **'main_ViT_Frontalization.py'**. It creates a model by starting completely from random values. The other two training codes use pre-trained encoders of transformes used for face analysis. 
-  **'main_frontalization_pretrained_encoder.py'** uses petrained [Transface](https://github.com/DanJun6737/TransFace?utm_source=chatgpt.com) encoder whereas **'main_frontalization_pretrained_encoder_v2.py'** uses FaceXFormer encoder.
+  **'main_frontalization_pretrained_encoder.py'** uses petrained [Transface](https://github.com/DanJun6737/TransFace?utm_source=chatgpt.com) encoder whereas **'main_frontalization_pretrained_encoder_v2.py'** uses
+  [FaceXFormer](https://github.com/Kartik-3004/facexformer) encoder.
 
+### Results
+- To reproduce the Honda test results given in the paper, just run **'main_test_honda_images.py'**. It will produce MSE and SSIM scores. Once you run this script, it will produce a directory with the frontalized images. Then, run
+  **'compute_fid_from_frontal-images.py'** to produce FID scores. The test images are given under FaceDatasets directory.
 
+![paper_fig](https://github.com/user-attachments/assets/33da9cc5-fc25-4a56-98e5-8ec1fd35310a)
+
+**Fig 2.** Visualization of frontalization results for selected non-frontal face images. The first row presents the input images with pose variations, while the second row shows the corresponding ground-truth frontal
+references. The subsequent rows display the outputs produced by the evaluated methods.
