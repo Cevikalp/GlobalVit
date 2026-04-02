@@ -27,3 +27,37 @@ task, the model can take either non-frontal face images or RGB scene images as i
 corresponding outputs, such as frontalized face images or semantic segmentation maps, as shown in the
 figure. Task-specific loss functions are employed during training to optimize the network for the respective
 objective.
+
+# 1. Requirements
+## Environments
+Following packages are required for this repo.
+
+    - python 3.10.18+
+    - torch  2.4+
+    - torchvision 0.19+ 
+    - torch 1.9+
+    - CUDA 12.9+
+    - cython 3.1.4+
+    - scikit-learn 1.3+
+    - numpy 2.2.6+
+    - tqdm 4.67.1
+    - bcolz 1.2.1  
+    - matplotlib 3.7.5
+    - albumentations
+    - blas 1.0+
+    - insightface 0.7.3+
+    - ninja 1.13+
+    - opencv-contrib-python 4.10.0.84
+    - pillow 11.3+
+    - pytorch-cuda 12.4
+    - pycocotools 2.0.8+
+    - scipy 1.15.3+
+    - scikit-learn 1.7.2+
+    - scikit-image 0.25.2+
+    - seaborn 0.13.2
+    - torchvision 0.25.0.dev20251222+cu128
+    - transformers 5.3+  
+
+
+
+
