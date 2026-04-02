@@ -63,7 +63,7 @@ Following packages are required for this repo.
 ### Training
 - For face frontalization, simply run  **'main_ViT_Frontalization.py'**. This script initializes and trains a model from scratch with randomly initialized weights.
   The other two training scripts utilize pretrained transformer encoders designed for face analysis. Specifically, **'main_frontalization_pretrained_encoder.py'**  employs a pretrained
-  [Transface](https://github.com/DanJun6737/TransFace?utm_source=chatgpt.com) encoder, while *'main_frontalization_pretrained_encoder_v2.py'** uses a [FaceXFormer](https://github.com/Kartik-3004/facexformer) encoder.
+  [Transface](https://github.com/DanJun6737/TransFace?utm_source=chatgpt.com) encoder, while **'main_frontalization_pretrained_encoder_v2.py'** uses a [FaceXFormer](https://github.com/Kartik-3004/facexformer) encoder.
 
 ### Results
 - To reproduce the Honda test results given in the journal version of the paper, just run **'main_test_honda_images.py'**. It will produce MSE and SSIM scores. Once you run this script, it will produce a directory with the frontalized images. Then, run
